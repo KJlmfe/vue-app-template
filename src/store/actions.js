@@ -14,7 +14,7 @@
 // Please use commit() to update the state.
 
 // import * as types from './mutation-types';
-import api from '@/api';
+import * as api from '@/api';
 
 export default {
   async initLocale({ commit }) {
