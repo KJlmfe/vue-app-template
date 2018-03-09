@@ -1,36 +1,38 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <Header />
+    <router-view class="view"></router-view>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
 export default {
   name: 'App',
-  created() {
-    this.$store.dispatch('initLocale');
+
+  components: {
+    Header,
+    Footer,
   },
-  computed: {
-    locale() {
-      return this.$store.state.locale;
-    },
-  },
-  watch: {
-    locale(val) {
-      this.$i18n.locale = val;
-    },
-  },
+
+  computed: {},
 };
 </script>
 
 <style>
+html,
+body {
+  height: 100%;
+}
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.view {
+  flex-grow: 1;
 }
 </style>
