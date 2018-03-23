@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import vueConfig from 'vue-config';
-import config from '@/config';
+import * as config from '@/config';
 import 'normalize.css';
 import App from './App';
 import router from './router';
